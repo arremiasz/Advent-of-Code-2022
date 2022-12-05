@@ -27,18 +27,12 @@ public class SupplyStacks {
 
     public static void part1(File file, String values) throws Exception {
         Scanner in = new Scanner(file);
-        
         Scanner stackv = new Scanner(values);
-        Stack<String> s1 = new Stack<>();
-        Stack<String> s2 = new Stack<>();
-        Stack<String> s3 = new Stack<>();
-        Stack<String> s4 = new Stack<>();
-        Stack<String> s5 = new Stack<>();
-        Stack<String> s6 = new Stack<>();
-        Stack<String> s7 = new Stack<>();
-        Stack<String> s8 = new Stack<>();
-        Stack<String> s9 = new Stack<>();
-        Stack[] stack = {s1, s2, s3, s4, s5, s6, s7, s8, s9};
+        
+        Stack[] stack = new Stack[9];
+        for (int i = 0; i < 9; i++) {
+            stack[i] = new Stack<>();
+        }
         
         for (Stack<String> s : stack) {
             Scanner line = new Scanner(stackv.nextLine());
@@ -75,18 +69,12 @@ public class SupplyStacks {
 
     public static void part2(File file, String values) throws Exception {
         Scanner in = new Scanner(file);
-        
         Scanner stackv = new Scanner(values);
-        Stack<String> s1 = new Stack<>();
-        Stack<String> s2 = new Stack<>();
-        Stack<String> s3 = new Stack<>();
-        Stack<String> s4 = new Stack<>();
-        Stack<String> s5 = new Stack<>();
-        Stack<String> s6 = new Stack<>();
-        Stack<String> s7 = new Stack<>();
-        Stack<String> s8 = new Stack<>();
-        Stack<String> s9 = new Stack<>();
-        Stack[] stack = {s1, s2, s3, s4, s5, s6, s7, s8, s9};
+        
+        Stack[] stack = new Stack[9];
+        for (int i = 0; i < 9; i++) {
+            stack[i] = new Stack<>();
+        }
         
         for (Stack<String> s : stack) {
             Scanner line = new Scanner(stackv.nextLine());
