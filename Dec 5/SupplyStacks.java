@@ -13,14 +13,14 @@ public class SupplyStacks {
     public static void main(String[] args) throws Exception{
         File file = new File("/Users/aremiasz/Documents/GitHub/Advent of Code 2022/Dec 5/input.txt");
         String values = "F H B V R Q D P\n" + 
-                "L D Z Q W V\n" +
-                "H L Z Q G R P C\n" +
-                "R D H F J V B\n" +
-                "Z W L C\n" +       // yes i typed in my stack inputs by hand what are you gonna do about it
-                "J R P N T G V M\n" +
-                "J R L V M B S\n" +
-                "D P J\n" +
-                "D C N W V";
+                        "L D Z Q W V\n" +
+                        "H L Z Q G R P C\n" +
+                        "R D H F J V B\n" +
+                        "Z W L C\n" +       // yes i typed in my stack inputs by hand what are you gonna do about it
+                        "J R P N T G V M\n" +
+                        "J R L V M B S\n" +
+                        "D P J\n" +
+                        "D C N W V";
         part1(file, values);
         part2(file, values);
     }
