@@ -5,7 +5,7 @@
 import java.io.File;
 import java.util.Scanner;
 
-public class Day6 {
+public class TuningTrouble {
 
     public static void main(String[] args) throws Exception {
         File file = new File("/Users/aremiasz/Documents/GitHub/Advent of Code 2022/Dec 6/input.txt");
