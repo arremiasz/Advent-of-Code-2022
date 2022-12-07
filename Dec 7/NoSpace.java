@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class Day7 {
+public class NoSpace {
 
     public static void main(String[] args) throws Exception {
         File file = new File("/Users/aremiasz/Documents/GitHub/Advent of Code 2022/Dec 7/input.txt");
