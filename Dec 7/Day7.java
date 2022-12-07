@@ -84,7 +84,7 @@ public class Day7 {
         
     }
     
-    private static void help1(Tree dir) { // there are directories smaller than the first ones, but you cant get to them because the big ones are bigger than 100k
+    private static void help1(Tree dir) { 
         for (Object o : dir.children) {
             Tree t = (Tree) o;
             if (t.type.equals("dir")) {
