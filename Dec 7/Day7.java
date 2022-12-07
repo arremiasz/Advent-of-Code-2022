@@ -1,5 +1,5 @@
 /*
- * i did not clean this up yet
+ * https://adventofcode.com/2022/day/7
  */
 
 import java.io.File;
@@ -16,29 +16,6 @@ public class Day7 {
     
     static long sum1 = 0;
     public static void part1(File file) throws Exception {
-        String test = "$ cd /\n"
-                + "$ ls\n"
-                + "dir a\n"
-                + "14848514 b.txt\n"
-                + "8504156 c.dat\n"
-                + "dir d\n"
-                + "$ cd a\n"
-                + "$ ls\n"
-                + "dir e\n"
-                + "29116 f\n"
-                + "2557 g\n"
-                + "62596 h.lst\n"
-                + "$ cd e\n"
-                + "$ ls\n"
-                + "584 i\n"
-                + "$ cd ..\n"
-                + "$ cd ..\n"
-                + "$ cd d\n"
-                + "$ ls\n"
-                + "4060174 j\n"
-                + "8033020 d.log\n"
-                + "5626152 d.ext\n"
-                + "7214296 k";
         Scanner in = new Scanner(file);
         
         Tree dir = new Tree("/", null, "root");
@@ -94,7 +71,6 @@ public class Day7 {
                         temp = cmd;
                     }
                 }
-                //System.out.println(dir.name + ": " + dir.val);
             }
             while(line.hasNext());
         }
@@ -103,57 +79,28 @@ public class Day7 {
             dir = (Tree) dir.parent;
         }
         
-        long sum = 0;
-        help1(dir, sum);
+        help1(dir);
         System.out.println(sum1);
         
     }
     
-    private static long help1(Tree dir, long sum) { // there are directories smaller than the first ones, but you cant get to them because the big ones are bigger than 100k
-        boolean foundDirs = false;
+    private static void help1(Tree dir) { // there are directories smaller than the first ones, but you cant get to them because the big ones are bigger than 100k
         for (Object o : dir.children) {
             Tree t = (Tree) o;
             if (t.type.equals("dir")) {
-                long pre = help1(t, sum);
-                if (pre > 0) {
-                    sum += pre;
-                }
+                help1(t);
                 if ((int)t.val <= 100000) {
-                    sum += (int)t.val;
                     sum1 += (int)t.val;
-                } foundDirs = true;
+                } 
             }
             
         }
-        if (foundDirs)
-            return sum;
-        return 0;
+        
     }
+    
+    
     static long sum2 = 70000000;
     public static void part2(File file) throws Exception {
-        String test = "$ cd /\n"
-                + "$ ls\n"
-                + "dir a\n"
-                + "14848514 b.txt\n"
-                + "8504156 c.dat\n"
-                + "dir d\n"
-                + "$ cd a\n"
-                + "$ ls\n"
-                + "dir e\n"
-                + "29116 f\n"
-                + "2557 g\n"
-                + "62596 h.lst\n"
-                + "$ cd e\n"
-                + "$ ls\n"
-                + "584 i\n"
-                + "$ cd ..\n"
-                + "$ cd ..\n"
-                + "$ cd d\n"
-                + "$ ls\n"
-                + "4060174 j\n"
-                + "8033020 d.log\n"
-                + "5626152 d.ext\n"
-                + "7214296 k";
         Scanner in = new Scanner(file);
         
         Tree dir = new Tree("/", null, "root");
@@ -209,7 +156,6 @@ public class Day7 {
                         temp = cmd;
                     }
                 }
-                //System.out.println(dir.name + ": " + dir.val);
             }
             while(line.hasNext());
         }
@@ -218,33 +164,22 @@ public class Day7 {
             dir = (Tree) dir.parent;
         }
         
-        long sum = 0;
-        System.out.println(dir.val);
-        help2(dir, sum);
+        help2(dir);
         System.out.println(sum2);
         
     }
     
-    // 1035571
-    private static long help2(Tree dir, long sum) { // there are directories smaller than the first ones, but you cant get to them because the big ones are bigger than 100k
-        boolean foundDirs = false;
+    private static void help2(Tree dir) { 
         for (Object o : dir.children) {
             Tree t = (Tree) o;
             if (t.type.equals("dir")) {
-                long pre = help2(t, sum);
-                if (pre > 0) {
-                    sum += pre;
-                }
+                help2(t);
                 if ((int)t.val >= 1035571) {
-                    sum += (int)t.val;
                     
                     if ((int)t.val < sum2) sum2 = (int)t.val;
-                } foundDirs = true;
+                } 
             }
             
         }
-        if (foundDirs)
-            return sum;
-        return 0;
     }
 }
