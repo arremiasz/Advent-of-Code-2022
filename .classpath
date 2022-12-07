@@ -6,6 +6,7 @@
 	<classpathentry kind="src" path="Dec 4"/>
 	<classpathentry kind="src" path="Dec 5"/>
 	<classpathentry kind="src" path="Dec 6"/>
+	<classpathentry kind="src" path="Dec 7"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
 		<attributes>
 			<attribute name="module" value="true"/>
